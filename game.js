@@ -12,6 +12,7 @@ window.addEventListener("load", function(){
         for (var i=0 ; i<5; i++){
          boundary[i].style.backgroundColor = "red";
         }
+        WinOrLoss.innerHTML = "You Lose!<br>Better luck next time<br>press ENTER to reset the game"
     }
     function resetColor(){
         for (var i=0 ; i<5; i++){
@@ -42,7 +43,18 @@ window.addEventListener("load", function(){
     function Reset (){
         resetColor();  
         running = true;
+        Launch();
     }
+
+    function pressEnter(){
+        document.addEventListener('keypress', (event) => {
+            if (event.key ==="enter"){
+                resetColor();
+              } 
+          
+      
+      })
+      }
 
     startGame();
 
