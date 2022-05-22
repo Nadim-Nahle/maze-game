@@ -4,6 +4,7 @@ window.addEventListener("load", function(){
     var start = document.getElementById("start");
     var end = document.getElementById("end");
     var WinOrLoss = document.getElementById("status");
+    var running;
 
 
 //function to change the background color to red
@@ -12,20 +13,21 @@ window.addEventListener("load", function(){
          boundary[i].style.backgroundColor = "red";
         }
     }
-
-    function ReturnColor(){
+    function resetColor(){
         for (var i=0 ; i<5; i++){
-         boundary[i].style.backgroundColor = "#eeeeee";
+         boundary[i].style.backgroundColor = "eeeeee";
         }
     }
 
     function startGame(){
-        start.addEventListener("click", Launch);
-        winGame();  
+        start.addEventListener("click", (Event) => {
+            Launch();
+        });
+      
      
     }
 
-    function Launch(){
+    function Launch(){   
     for (var i = 0; i<5; i++){
             boundary[i].addEventListener("mouseover", changeColor);
         }
@@ -36,6 +38,11 @@ window.addEventListener("load", function(){
         WinOrLoss.innerHTML = "You Win !!"
         })
     };
+
+    function Reset (){
+        resetColor();  
+        running = true;
+    }
 
     startGame();
 
