@@ -4,9 +4,9 @@ window.addEventListener("load", function(){
     var start = document.getElementById("start");
     var end = document.getElementById("end");
     var WinOrLoss = document.getElementById("status");
-    var outside = document.getElementById("game");
     var running;
     var score = 0;
+    var scoreArea = document.getElementsByClassName("boundary example");
 
 
 //function to change the background color to red
@@ -32,14 +32,11 @@ window.addEventListener("load", function(){
      
     }
 
-    function cheating(){
-        alert("you trying to cheat!");
-    }
-
     function Launch(){
-        
         end.addEventListener("mouseover", function(event){
-            WinOrLoss.innerHTML = ("You Win! press enter to play agian")
+            WinOrLoss.innerHTML = ("You Win! press enter to play agian");
+            scoreArea[0].style.textAlign = "centre";
+            scoreArea[0].innerHTML = ("score= 5");
             pressEnter();
         }) 
         for (var i = 0; i<5; i++){
