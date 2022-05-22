@@ -1,5 +1,7 @@
 var boundary = document.getElementsByClassName("boundary");
 var start = document.getElementById("start");
+var end = document.getElementById("end");
+var qiqi = document.getElementById("status");
 
 
 //function to change the background color to red
@@ -9,9 +11,10 @@ function changeColor(){
     }
 }
 
-
 function startGame(){
-    start.addEventListener("click", Launch)   
+    start.addEventListener("click", Launch);
+    winGame();  
+     
 }
 
 function Launch(){
@@ -20,7 +23,14 @@ function Launch(){
     }
 }
 
-startGame();
-;
+function winGame(){
+    end.addEventListener("mouseover", (event) =>{
+       qiqi.innerHTML = "You Win !!"
+    })
+ }
+
+ startGame();
+ 
+
 
 
