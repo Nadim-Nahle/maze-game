@@ -14,7 +14,9 @@ window.addEventListener("load", function(){
         for (var i=0 ; i<5; i++){
          boundary[i].style.backgroundColor = "red";
         }
-        WinOrLoss.innerHTML = "You Lose!<br>Better luck next time<br>press ENTER to reset the game"
+        WinOrLoss.innerHTML = "You Lose!<br>Better luck next time<br>press ENTER to reset the game";
+        score = score -10;
+        scoreArea[0].innerHTML = ("score= " + score);
         pressEnter();
     }
     function resetColor(){
@@ -36,7 +38,8 @@ window.addEventListener("load", function(){
         end.addEventListener("mouseover", function(event){
             WinOrLoss.innerHTML = ("You Win! press enter to play agian");
             scoreArea[0].style.textAlign = "centre";
-            scoreArea[0].innerHTML = ("score= 5");
+            score=5;
+            scoreArea[0].innerHTML = ("score= " + score);
             pressEnter();
         }) 
         for (var i = 0; i<5; i++){
@@ -59,6 +62,9 @@ window.addEventListener("load", function(){
         document.addEventListener('keypress', (event) => {
             if (event.key ==="Enter"){
                 resetColor();
+                score = 0;
+                scoreArea[0].innerHTML = ("score= " + score);
+                WinOrLoss.innerHTML = "Begin by moving your mouse over the S."
               } 
           
       
