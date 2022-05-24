@@ -7,6 +7,8 @@ window.addEventListener("load", function(){
     var running;
     var score = 0;
     var scoreArea = document.getElementsByClassName("boundary example");
+    var changeTimer = document.getElementById("timer");
+    var timer ;
 
 
 //function to change the background color to red
@@ -28,6 +30,7 @@ window.addEventListener("load", function(){
 
     function startGame(){
         start.addEventListener("click", (Event) => {
+            setTimer();
             Launch();
         });
       
@@ -70,6 +73,17 @@ window.addEventListener("load", function(){
       
       })
       }
+
+      function cheating(){
+        alert("you trying to cheat!");
+    }
+    function setTimer(){
+        var sec=0;
+        timer = setInterval(()=>{
+            changeTimer.innerHTML = '00:'+sec;
+            sec++;
+        }, 1000)
+    }
 
     startGame();
 
