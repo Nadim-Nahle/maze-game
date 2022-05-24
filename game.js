@@ -17,6 +17,7 @@ window.addEventListener("load", function(){
          boundary[i].style.backgroundColor = "red";
         }
         WinOrLoss.innerHTML = "You Lose!<br>Better luck next time<br>press ENTER to reset the game";
+        stopTimer();
         score = score -10;
         scoreArea[0].innerHTML = ("score= " + score);
         pressEnter();
@@ -83,6 +84,10 @@ window.addEventListener("load", function(){
             changeTimer.innerHTML = '00:'+sec;
             sec++;
         }, 1000)
+    }
+
+    function stopTimer(){
+        clearInterval(timer);
     }
 
     startGame();
